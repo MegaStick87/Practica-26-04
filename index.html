@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Define que este documento sigue el estándar HTML5 -->
+<html lang="es">
+<!-- Indica que el contenido del documento está en español -->
+<head>
+  <meta charset="UTF-8">
+  <!-- Establece la codificación de caracteres UTF-8 para el documento -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Asegura la compatibilidad con versiones anteriores de Internet Explorer -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Asegura que la página sea responsiva y se muestre correctamente en diferentes dispositivos -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Vincula el archivo de estilos CSS externo -->
+  <title>Space War - Demo</title>
+  <!-- Define el título de la página -->
+  <link rel="icon" href="img/black-hole_ico2.png" >
+  <!-- Especifica un icono para la pestaña del navegador -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Preconecta con los servidores de Google Fonts para mejorar la carga de fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <!-- Importa la fuente 'Staatliches' de Google Fonts -->
+</head>
+<body>
+
+  <audio id="bgm" autoplay loop>
+    <!-- Elemento de audio que reproduce música de fondo automáticamente y en bucle -->
+    <source src="/audio/bg_music.mp3" type="audio/mp3">
+    <!-- Define la fuente de audio y su tipo -->
+    Tu navegador no soporta audio HTML.
+    <!-- Mensaje alternativo para navegadores que no soportan el elemento audio -->
+  </audio>
+
+  <video autoplay loop muted id="font_vid">
+    <!-- La etiqueta <video> se utiliza para incrustar contenido de video en la página. -->
+    <!-- 'autoplay' inicia automáticamente el video, 'loop' lo repite indefinidamente y 'muted' lo silencia. -->
+    <source src="game_bg/font.mp4" type="video/mp4" />
+    <!-- La etiqueta <source> especifica la fuente del video y su formato. -->
+</video>
+
+<!-- Se acabo descartando está función por falta de tiempo...
+<div id="difficulty">
+  <button onclick="setDifficulty('easy')">Fácil</button>
+  <button onclick="setDifficulty('medium')">Medio</button>
+  <button onclick="setDifficulty('hard')">Difícil</button>
+</div>
+ -->
+
+ <span id="lives">Lives:<i>5</i></span>
+ <!-- Muestra la cantidad de vidas del jugador -->
+ <span id="times"></span>
+ <!-- Contenedor para mostrar el tiempo u otra información relevante -->
+ <div class="nave" id="nave"></div>
+ <!-- Div que representa la nave del jugador -->
+ <audio src="audio/laser.mp3" id="laser"></audio>
+ <!-- Audio que se reproduce al disparar un láser -->
+ <audio src="audio/explosion.mp3" id="explosion"></audio>
+ <!-- Audio que se reproduce al ocurrir una explosión -->
+
+ <!-- Elementos para mostrar el puntaje actual y el más alto -->
+ <span id="score">Score: 0</span> <!-- Muestra el puntaje actual del jugador -->
+ <span id="highScore">High Score: 0</span> <!-- Muestra el puntaje más alto alcanzado -->
+
+ <script src="js/gameLogic.js"></script>
+ <!-- Vincula el archivo JavaScript que controla la lógica del juego -->
+ </body>
+ <!-- Esta etiqueta cierra el <body>, que es donde termina el contenido visible de la página. -->
+ </html>
+ <!-- Esta etiqueta cierra el documento HTML. -->

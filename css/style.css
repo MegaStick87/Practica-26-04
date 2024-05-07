@@ -1,0 +1,127 @@
+/* Estilos base para todos los elementos, eliminando márgenes, rellenos y configurando la caja de dimensiones */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Staatliches", sans-serif; /* Fuente específica para todo el documento */
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilos para el video de fondo */
+#font_vid {
+    position: fixed; /* Fija el video en la pantalla */
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; /* Asegura que el video cubra todo el ancho */
+    min-height: 100%; /* Asegura que el video cubra toda la altura */
+    z-index: -1; /* Coloca el video detrás de todos los elementos */
+    align-items: center; /* Centra el contenido del video verticalmente */
+}
+
+/* Estilos para la nave del jugador */
+.nave{
+    width: 80px;
+    height: 80px;
+    background-image: url('../img/nave1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50vw - 40px); /* Centra la nave horizontalmente */
+}
+
+/* Establece el fondo del área de juego */
+body{
+    background-image: url('../img/espacio.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Evita el desplazamiento de la página */
+}
+
+/* Estilos para las balas disparadas por la nave */
+.bala{
+    width: 10px;
+    height: 50px;
+    background-color: rgb(234,243,150);
+    border-radius: 15px;
+    box-shadow: 0px 0px 40px 10px #0ff; /* Efecto de brillo para las balas */
+    position: absolute;
+}
+
+/* Estilos para las naves enemigas */
+.enemigo{
+    width: 80px;
+    height: 50px;
+    background-image: url('../img/nave.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+}
+
+/* Estilos para mostrar las vidas restantes del jugador */
+#lives{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    color: rgb(9, 255, 0);
+    z-index: 1;
+}
+
+/* Estilos para mostrar el tiempo o cualquier otro contador */
+#times{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+/* Estilos para mostrar el puntaje actual y el puntaje más alto */
+#score, #highScore {
+    position: absolute;
+    top: 50px;
+    font-size: 20px;
+    color: #FFF;
+    z-index: 1;
+}
+
+/* Posiciona el puntaje actual a la izquierda */
+#score {
+    left: 10px;
+}
+
+/* Posiciona el puntaje más alto a la derecha */
+#highScore {
+    right: 10px;
+}
+
+/* Animación de parpadeo para indicar invulnerabilidad */
+@keyframes blink {
+    0%, 100% { filter: none; }
+    50% { filter: brightness(2); }
+}
+
+/* Animación para el respawn de la nave */
+.invulnerable {
+    animation: blink 0.5s linear infinite;
+}
+
+/* Animación para la reaparición de la nave */
+@keyframes respawn {
+    from { 
+        transform: translateY(100vh); /* Mover la nave desde abajo, fuera de la pantalla */
+    }
+    to { 
+        transform: translateY(0); /* Volver a la posición inicial */
+    }
+}
+
+.respawn {
+    animation: respawn 1s ease-out forwards; /* Asegura que la animación corra hacia adelante y se quede en la posición final */
+}
